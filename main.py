@@ -15,10 +15,13 @@ url = "https://api.proxyscrape.com/v2/?request=PARAMREQ&protocol=PARAMPROTOCOL&t
 headers={}
 payload={}
 
-print(f"Before change {url}")
+# Adds params to link
 for key in proxyParams.keys():
     url = url.upper().replace(key, proxyParams[key])
 url = url.lower()
-print(f"After change {url}")
-# response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
-# print(response.text)
+
+#Grabs proxies
+
+response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
+print(response.text)
+print("test  "+ response[1])
