@@ -16,8 +16,7 @@ headers={}
 payload={}
 
 print(f"Before change {url}")
-
-for key in dict.keys():
+for key in proxyParams.keys():
     url = url.upper().replace(key, proxyParams[key])
 print(f"After change {url}")
 # response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
