@@ -2,7 +2,7 @@ import requests
 
 #edit for different settings, leave alone for default
 proxyParams = {
-    "PARAMREQ" : "displayproxies"
+    "PARAMREQ" : "displayproxies",
     "PARAMPROTOCOL" : "http",
     "PARAMTIMEOUT" : "10000",
     "PARAMCOUNTRY" : "all",
@@ -15,8 +15,10 @@ url = "https://api.proxyscrape.com/v2/?request=PARAMREQ&protocol=PARAMPROTOCOL&t
 headers={}
 payload={}
 
-for key in dictionary.keys():
-    url = url.upper().replace(key, proxyParams[key])
+print(f"Before change {url}")
 
-response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
-print(response.text)
+for key in dict.keys():
+    url = url.upper().replace(key, proxyParams[key])
+print(f"After change {url}")
+# response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
+# print(response.text)
