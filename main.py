@@ -25,4 +25,5 @@ url = url.lower()
 response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
 print(response.text)
 
-proxyList = []
+proxyList = response.text.split("\n")
+print(f"{len(proxyList)} Proxies scraped!")
