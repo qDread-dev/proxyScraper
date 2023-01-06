@@ -24,4 +24,5 @@ url = url.lower()
 
 response = requests.request("GET", url, headers=headers, data=payload,timeout=5)
 print(response.text)
-print("test  "+ response[1])
+
+proxyList = []
